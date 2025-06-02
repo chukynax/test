@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "Allow-SNS-SendMessage",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "sqs:SendMessage",
+        "Resource": "QUEUE_ARN_PLACEHOLDER",
+        "Condition": {
+          "ArnEquals": {
+            "aws:SourceArn": "TOPIC_ARN_PLACEHOLDER"
+          }
+        }
+      }
+    ]
+  }
